@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>DataSphere Sheets Dashboard</title>
+  <meta name="title" content="DataSphere Sheets Dashboard">
+  <meta name="description" content="Modern real-time analytics and data directory web application powered entirely by Google Sheets and client-side JavaScript.">
+  <meta name="theme-color" content="#6366f1">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DataSphere Sheets Dashboard">
+  <meta property="og:description" content="Modern real-time analytics and data directory web application powered entirely by Google Sheets.">
+
+  <!-- Mobile & PWA Web App Capable -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="DataSphere">
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4c8.svg">
+  
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Core CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- App Wrapper -->
+  <div class="app-container">
+
+    <!-- Header Section -->
+    <header class="app-header" id="app-header">
+      <div class="logo-section">
+        <!-- Dashboard Vector SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="width: 28px; height: 28px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+        </svg>
+        <h1 class="app-title">DataSphere</h1>
+      </div>
+
+      <div class="header-controls">
+        <!-- Refresh Button -->
+        <button class="btn" id="refresh-btn" title="Refresh sheet data">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 18px; height: 18px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+          </svg>
+          <span>Refresh</span>
+        </button>
+
+        <!-- Export CSV Button -->
+        <button class="btn btn-primary" id="export-btn" title="Export current results to CSV">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 18px; height: 18px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          <span>Export</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button class="btn theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+          <!-- Moon Icon (for Light Mode -> Dark Mode toggle) -->
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+          <!-- Sun Icon (for Dark Mode -> Light Mode toggle) -->
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21m8.94-8.94h-2.25M4.125 12h-2.25m1.583-6.42l1.59 1.59m11.22 11.22l1.59 1.59m-1.59-11.22l-1.59 1.59m-11.22 11.22l-1.59 1.59M12 7.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Metrics Dashboard -->
+    <section class="dashboard-grid" id="dashboard-grid">
+      <!-- Generated dynamically by app.js -->
+    </section>
+
+    <!-- Search, Filters, and Tags Control Toolbar -->
+    <section class="toolbar-section">
+      <div style="display: flex; gap: 1rem; align-items: center; width: 100%; flex-wrap: wrap;">
+        <!-- Fuzzy Search Bar -->
+        <div class="search-wrapper">
+          <svg class="search-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+          <input type="text" class="search-input" id="search-input" placeholder="Search across all attributes..." autocomplete="off">
+        </div>
+        
+        <!-- Reset Filters Button -->
+        <button class="btn reset-filters-btn" id="reset-filters-btn" style="display: none;">
+          <span>Clear Filters</span>
+        </button>
+      </div>
+
+      <!-- Active Filters Tag Container -->
+      <div class="active-tags-container" id="active-tags">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Dynamic Column Dropdown Filters -->
+      <div class="filters-grid" id="filters-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Directory Directory results metadata -->
+    <div class="view-toggle-bar">
+      <div class="results-count" id="results-count">
+        Showing <span>0</span> of <span>0</span> records
+      </div>
+    </div>
+
+    <!-- Cards container grid -->
+    <main class="cards-container" id="cards-container">
+      <!-- Loading placeholders (skeleton screens) drawn dynamically on init -->
+    </main>
+
+    <!-- Pagination controls -->
+    <section class="pagination-container" id="pagination-container">
+      <div class="results-count"></div>
+      <div class="page-controls" id="page-controls">
+        <!-- Buttons added dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p class="footer-timestamp">Last synced: <span id="last-updated-time">Never</span></p>
+      <p class="footer-text">&copy; 2026 DataSphere Dashboard. Built with clean Vanilla JS & CSS. Fully compatible with GitHub Pages.</p>
+    </footer>
+
+  </div>
+
+  <!-- Scroll-to-Top Button -->
+  <button class="btn scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="width: 20px; height: 20px;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
+  <!-- Toast Notification Overlay Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Core Logic Loading Chain (Dependencies first) -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pwa.js"></script>
+</body>
+</html>

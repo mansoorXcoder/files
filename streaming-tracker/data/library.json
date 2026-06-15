@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Breaking Bad",
+    "type": "Series",
+    "status": "Watching",
+    "language": "English",
+    "poster": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=400&auto=format&fit=crop",
+    "notes": "Peak television. Incredible character development and tension. Bryan Cranston is magnificent."
+  },
+  {
+    "title": "Spirited Away",
+    "type": "Anime",
+    "status": "Watched",
+    "language": "Japanese",
+    "poster": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop",
+    "notes": "Absolute masterpiece by Studio Ghibli and Hayao Miyazaki. Beautiful animation and music."
+  },
+  {
+    "title": "Inception",
+    "type": "Movie",
+    "status": "Watched",
+    "language": "English",
+    "poster": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=400&auto=format&fit=crop",
+    "notes": "Mind-bending heist thriller by Christopher Nolan. Visual effects and Hans Zimmer's score are timeless."
+  },
+  {
+    "title": "Crash Landing on You",
+    "type": "Drama",
+    "status": "Planned",
+    "language": "Korean",
+    "poster": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop",
+    "notes": "Highly recommended K-Drama. Classic star-crossed lovers premise set in North/South Korea."
+  },
+  {
+    "title": "Attack on Titan",
+    "type": "Anime",
+    "status": "Watching",
+    "language": "Japanese",
+    "poster": "https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?q=80&w=400&auto=format&fit=crop",
+    "notes": "Action-packed, intense, and deeply philosophical. The world-building and plot twists are unparalleled."
+  },
+  {
+    "title": "The Dark Knight",
+    "type": "Movie",
+    "status": "Watched",
+    "language": "English",
+    "poster": "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop",
+    "notes": "Arguably the best superhero movie of all time. Heath Ledger's performance as the Joker is legendary."
+  }
+]
