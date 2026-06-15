@@ -1,7 +1,13 @@
 def handle_error(error):
     error_msg = str(error)
 
-    if "400" in error_msg:
+    if "429" in error_msg:
+        return "ERROR 429: Too Many Requests (Rate Limit Exceeded)"
+
+    elif "API key" in error_msg or "api_key" in error_msg:
+        return "Invalid API Key"
+
+    elif "400" in error_msg:
         return "ERROR 400: Bad Request"
 
     elif "401" in error_msg:
@@ -12,9 +18,6 @@ def handle_error(error):
 
     elif "404" in error_msg:
         return "ERROR 404: Not Found"
-
-    elif "429" in error_msg:
-        return "ERROR 429: Too Many Requests"
 
     elif "500" in error_msg:
         return "ERROR 500: Internal Server Error"

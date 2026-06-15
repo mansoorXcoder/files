@@ -1,5 +1,13 @@
-from ai_client import ask_ai
+import sys
+import os
 
+sys.path.append(
+    os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..")
+    )
+)
+
+from ai_client import ask_ai
 # Vague / Contradictory Prompt
 bad_prompt = """
 Write a detailed summary of Artificial Intelligence.
