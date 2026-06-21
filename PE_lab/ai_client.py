@@ -15,7 +15,10 @@ MODELS = [
     "gemini-3.1-flash-lite",
     "gemma-4-31b",
     "gemma-4-26b",
-    "gemini-2.5-flash-lite"
+    "gemini-2.5-flash-lite",
+    "nano-banana-pro",
+    "nano-banana-2",
+    "gemini-3-pro-image"
 ]
 
 def ask_ai(prompt):
